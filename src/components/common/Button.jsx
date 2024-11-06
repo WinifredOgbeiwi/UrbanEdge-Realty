@@ -1,9 +1,14 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-const Button = () => {
+const Button = ({ text,bg,link }) => {
   return (
-    <div>Button</div>
-  )
-}
+    <button className={`${bg} px-5 py-2 rounded-md border-primary border-2`}>
+      <Link to={link}>
+        {text}
+      </Link>
+    
+    </button>
+  );
+};
 
-export default Button
+export default Button;
