@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./components/layouts/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Landing_page/Home";
-import Login from "./pages/auth/login";
+import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import ConfirmRegistration from "./pages/auth/ConfirmRegistration";
 import ForgotPassword from "./pages/auth/ForgetPassword";
