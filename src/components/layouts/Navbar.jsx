@@ -23,7 +23,7 @@ const Navbar = () => {
 
       <div className="space-x-10">
         <Button text={"Login"} link={"/login"}/>
-        <Button text={"Register"} bg={"bg-primary text-white"} login={"/register"} />
+        <Button text={"Register"} bg={"bg-primary text-white"} link={"/register"} />
       </div>
     </header>
   );
