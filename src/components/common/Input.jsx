@@ -5,14 +5,15 @@ const Input = ({
   type,
   placeholder,
   id,
+  style,
   onchange,
   value,
   passwordVisibility,
   setPasswordVisibility,
 }) => {
   return (
-    <div className="flex flex-col relative font-medium">
-      <label htmlFor={id} className="text-lg">
+    <div className="flex flex-col relative ">
+      <label htmlFor={id} className="">
         {text}
       </label>
       <input
@@ -20,7 +21,7 @@ const Input = ({
         name={id}
         id={id}
         placeholder={placeholder}
-        className="border-2 border-secondary outline-none mb-5 px-1 rounded-md py-2 mt-1"
+        className="bg-[#f1ecf8] placeholder:text-gray-500 outline-none mb-4 px-1 rounded-md py-2"
         onChange={onchange}
         value={value}
         // required
@@ -28,7 +29,7 @@ const Input = ({
 
       {id === "password" && (
         <div
-          className="absolute right-2 top-[45px] hover:cursor-pointer"
+          className="absolute right-2 top-[38px] hover:cursor-pointer"
           onClick={() => setPasswordVisibility(!passwordVisibility)}
         >
           {passwordVisibility ? <FaEye /> : <FaEyeSlash />}

@@ -30,7 +30,7 @@ const GoogleAuth = ({page}) => {
     }
   };
   return (
-    <div onClick={handlesGoogleReg}>
+    <div onClick={handlesGoogleReg} className="px-4 mb-5 ">
       <Button
         text={`${page} with Google`}
         bg="bg-red-700 border-none text-white w-full"

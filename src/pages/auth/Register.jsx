@@ -12,6 +12,7 @@ import { serverTimestamp, setDoc, doc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
+import IMAGES from "../../utils/assets";
 
 const Register = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -63,9 +64,10 @@ const Register = () => {
 
   const handlesGoogleReg = async (e) => {};
   return (
-    <section className="md:flexing mx-20 my-10">
-      <div className="w-full md:w-1/2 ">
-        <form onSubmit={handlesSubmit}>
+    <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
+      <div className="w-full h-full bg-[#E6D8FF]">
+        <h2 className="text-4xl mt-5 text-center font-bold mb-2">Welcome </h2>
+        <form onSubmit={handlesSubmit} className="px-4">
           <Input
             id="firstname"
             text="First Name"
@@ -111,12 +113,16 @@ const Register = () => {
               </Link>
             </p>
           </div>
-          <Button text="Register" bg="bg-primary text-white w-full mt-3" />
+          <Button text="Register" bg="bg-primary text-white w-full" />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>
         </div>
         <GoogleAuth page="Register" />
+      </div>
+
+      <div className="hidden sm:flex bg-primary  ">
+        <img src={IMAGES.Auth} alt="" />
       </div>
     </section>
   );

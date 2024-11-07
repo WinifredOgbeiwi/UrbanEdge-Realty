@@ -5,6 +5,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
+import IMAGES from "../../utils/assets";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -38,9 +39,12 @@ const Login = () => {
   };
 
   return (
-    <section className="md:flexing mx-20 h-screen">
-      <div className="w-full md:w-1/2 ">
-        <form onSubmit={handlesSubmit}>
+    <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
+      <div className="w-full h-full bg-[#E6D8FF]">
+        <h2 className="text-4xl my-5 text-center font-bold">
+          Welcome Back
+        </h2>
+        <form onSubmit={handlesSubmit} className="px-4">
           <Input
             id="email"
             text="Email"
@@ -84,8 +88,8 @@ const Login = () => {
         <GoogleAuth page="Login" />
       </div>
 
-      <div>
-
+      <div className="hidden sm:flex bg-primary  ">
+        <img src={IMAGES.Auth} alt="" />
       </div>
     </section>
   );
