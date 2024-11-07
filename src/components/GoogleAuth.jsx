@@ -5,7 +5,7 @@ import { db } from "../../firebase";
 import { getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-const GoogleAuth = () => {
+const GoogleAuth = ({page}) => {
   const navigate = useNavigate();
 
   const handlesGoogleReg = async () => {
@@ -32,7 +32,7 @@ const GoogleAuth = () => {
   return (
     <div onClick={handlesGoogleReg}>
       <Button
-        text="Register with Google"
+        text={`${page} with Google`}
         bg="bg-red-700 border-none text-white w-full"
       />
     </div>
