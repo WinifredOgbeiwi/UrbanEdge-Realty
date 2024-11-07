@@ -1,14 +1,7 @@
 import { useState } from "react";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { db } from "../../../firebase";
-import { serverTimestamp, setDoc, doc } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
@@ -77,7 +70,7 @@ const Login = () => {
               </Link>
             </p>
             <Link
-              to={"/forgot-password"}
+              to={"/reset-password"}
               className="text-primary hover:cursor-pointer "
             >
               Forgot password?

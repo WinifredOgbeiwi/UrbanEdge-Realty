@@ -5,6 +5,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
+  sendEmailVerification,
 } from "firebase/auth";
 import { db } from "../../../firebase";
 import { serverTimestamp, setDoc, doc } from "firebase/firestore";
@@ -46,21 +47,13 @@ const Register = () => {
       });
 
       const user = userCredential.user;
+      await sendEmailVerification(user);
 
       const formData = { ...form };
-
       delete formData.password;
-
       formData.timestamp = serverTimestamp();
-
       await setDoc(doc(db, "users", user.uid), formData);
-
-      console.log(user);
-
-      toast.success("Registration Successful ! ");
-
-      navigate("/");
-
+      navigate("/confirm-registration");
     } catch (error) {
       console.log(error);
       toast.error("Error ! Try Again");
@@ -68,9 +61,7 @@ const Register = () => {
     console.log(form);
   };
 
- const  handlesGoogleReg = async (e) =>{
-
- }
+  const handlesGoogleReg = async (e) => {};
   return (
     <section className="md:flexing mx-20 my-10">
       <div className="w-full md:w-1/2 ">
@@ -119,14 +110,13 @@ const Register = () => {
                 Login
               </Link>
             </p>
-            
           </div>
           <Button text="Register" bg="bg-primary text-white w-full mt-3" />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>
         </div>
-        <GoogleAuth page="Register"/>
+        <GoogleAuth page="Register" />
       </div>
     </section>
   );

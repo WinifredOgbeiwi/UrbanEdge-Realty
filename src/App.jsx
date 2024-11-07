@@ -5,7 +5,7 @@ import Home from "./pages/Landing_page/Home";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import ConfirmRegistration from "./pages/auth/ConfirmRegistration";
-import ForgotPassword from "./pages/auth/ForgetPassword";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 import Profile from "./pages/Dashboard/Profile";
 import NotFound from "./pages/NotFound";
 import Buy from "./pages/Dashboard/Buy";
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/listings" element={<Listings />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ForgotPassword />} />
         <Route path="/confirm-registration" element={<ConfirmRegistration />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/buy" element={<Buy />} />
@@ -32,7 +32,7 @@ const App = () => {
         <Route path="/property:id" element={<PropertiesDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };
