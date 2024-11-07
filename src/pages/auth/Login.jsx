@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   return (
-    <section className="md:flexing mx-20 my-10">
+    <section className="md:flexing mx-20 h-screen">
       <div className="w-full md:w-1/2 ">
         <form onSubmit={handlesSubmit}>
           <Input
@@ -82,6 +82,10 @@ const Login = () => {
           <p className="mx-4">OR</p>
         </div>
         <GoogleAuth page="Login" />
+      </div>
+
+      <div>
+
       </div>
     </section>
   );
