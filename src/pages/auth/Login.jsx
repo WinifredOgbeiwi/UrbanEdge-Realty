@@ -24,6 +24,8 @@ const Login = () => {
 
   const handlesSubmit = async (e) => {
     e.preventDefault();
+    if(email === "" || password === "") toast.error("Fill input field");
+   else{
     try {
       const auth = getAuth();
       const userCredential = await signInWithEmailAndPassword(
@@ -36,14 +38,13 @@ const Login = () => {
     } catch (error) {
       toast.error("Error! Can't login");
     }
+  }
   };
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
-      <div className="w-full h-full bg-[#E6D8FF]">
-        <h2 className="text-4xl my-5 text-center font-bold">
-          Welcome Back
-        </h2>
+      <div className="w-full h-full bg-[#E6D8FF] px-10 ">
+        <h2 className="text-4xl mt-10 text-center font-bold">Welcome Back</h2>
         <form onSubmit={handlesSubmit} className="px-4">
           <Input
             id="email"
@@ -80,7 +81,7 @@ const Login = () => {
               Forgot password?
             </Link>
           </div>
-          <Button text="Login" bg="bg-primary text-white w-full mt-3" />
+          <Button onclick={handlesSubmit} text="Login" bg="bg-primary text-white w-full mt-3" />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>

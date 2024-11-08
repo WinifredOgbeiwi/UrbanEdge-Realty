@@ -3,49 +3,68 @@ import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import {
   getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-  signInWithEmailAndPassword,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { db } from "../../../firebase";
-import { serverTimestamp, setDoc, doc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import GoogleAuth from "../../components/GoogleAuth";
+import IMAGES from "../../utils/assets";
+import { ROUTES } from "../../utils/routes";
 
 const ForgotPassword = () => {
-  const [passwordVisibility, setPasswordVisibility] = useState(true);
   const [email, SetEmail] = useState("");
-
-  const navigate = useNavigate();
 
   const handlesSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const auth = getAuth();
-      await sendPasswordResetEmail(auth, email);
-      toast.success("Email successfully sent!");
-    } catch (error) {
-      toast.error("Could not send reset password!");
-    }
+    if(email === "")  toast.error("Enter email");
+     else {
+       try {
+         const auth = getAuth();
+         await sendPasswordResetEmail(auth, email);
+         toast.success("Email successfully sent!");
+       } catch (error) {
+         toast.error("Could not send reset password!");
+       }
+     }
   };
 
   return (
-    <section className="md:flexing mx-20 my-10">
-      <div className="w-full md:w-1/2 ">
-        <form onSubmit={handlesSubmit}>
-          <Input
-            id="email"
-            text="Email"
-            type="email"
-            placeholder="Enter Email"
-            value={email}
-            onchange={(e) => SetEmail(e.target.value)}
-          />
+    <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
+      <div className="w-full h-full bg-[#E6D8FF] px-20 flex flex-col justify-center">
+        <h2 className="text-4xl mb-5 text-center font-bold">
+          Forgot Password ?
+        </h2>
+        <h3 className="text-3xl font-bold"></h3>
+        <p className="">
+          No worries, we'll send you reset instructions. Enter the email
+          associated with your UrbanEdge Realty's account.
+        </p>
+        <div className="w-full ">
+          <form onSubmit={handlesSubmit} className="mt-5">
+            <Input
+              id="email"
+              text="Email"
+              type="email"
+              placeholder="Enter Email"
+              value={email}
+              onchange={(e) => SetEmail(e.target.value)}
+            />
 
-          <Button text="Submit" bg="bg-primary text-white w-full mt-3" />
-        </form>
+            <Button
+              text="Request reset link"
+              bg="bg-primary text-white w-full mt-3"
+              onclick={handlesSubmit}
+            />
+            <p className="mt-3">
+              Back to
+              <Link to={ROUTES.LOGIN} className="text-primary ml-1">
+                login
+              </Link>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div className="hidden sm:flex bg-primary  ">
+        <img src={IMAGES.Auth} alt="" />
       </div>
     </section>
   );

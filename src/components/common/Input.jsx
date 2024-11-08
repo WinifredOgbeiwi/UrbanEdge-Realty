@@ -5,7 +5,6 @@ const Input = ({
   type,
   placeholder,
   id,
-  style,
   onchange,
   value,
   passwordVisibility,
@@ -21,15 +20,15 @@ const Input = ({
         name={id}
         id={id}
         placeholder={placeholder}
-        className="bg-[#f1ecf8] placeholder:text-gray-500 outline-none mb-4 px-1 rounded-md py-2"
+        className="bg-[#f1ecf8] placeholder:text-gray-500 outline-none mb-6 px-1 rounded-md py-2"
         onChange={onchange}
         value={value}
-        // required
+        required
       />
 
       {id === "password" && (
         <div
-          className="absolute right-2 top-[38px] hover:cursor-pointer"
+          className="absolute right-2 top-[36px] hover:cursor-pointer"
           onClick={() => setPasswordVisibility(!passwordVisibility)}
         >
           {passwordVisibility ? <FaEye /> : <FaEyeSlash />}
