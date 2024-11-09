@@ -51,7 +51,6 @@ const ForgotPassword = () => {
 
             <Button
               text="Request reset link"
-              bg="bg-primary text-white w-full mt-3"
               onclick={handlesSubmit}
             />
             <p className="mt-3">

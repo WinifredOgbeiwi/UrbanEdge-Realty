@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
 import IMAGES from "../../utils/assets";
+import ModalComp from "../../components/common/Modal";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -81,17 +82,20 @@ const Login = () => {
               Forgot password?
             </Link>
           </div>
-          <Button onclick={handlesSubmit} text="Login" bg="bg-primary text-white w-full mt-3" />
+          <Button
+            onclick={handlesSubmit}
+            text="Login"
+          />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>
         </div>
         <GoogleAuth page="Login" />
       </div>
-
       <div className="hidden sm:flex bg-primary  ">
         <img src={IMAGES.Auth} alt="" />
       </div>
+     < ModalComp/>
     </section>
   );
 };

@@ -17,7 +17,7 @@ const Profile = () => {
     }
   };
   return (
-    <section>
+    <section className="mx-12 my-5">
       <Button
         onclick={handlesLogOut}
         text="Log Out"

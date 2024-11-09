@@ -109,7 +109,6 @@ const Register = () => {
           <Button
             onclick={handlesSubmit}
             text="Register"
-            bg="bg-primary text-white w-full"
           />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
