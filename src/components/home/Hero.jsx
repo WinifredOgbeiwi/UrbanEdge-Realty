@@ -24,11 +24,14 @@ const Hero = () => {
               <p>properties</p>
             </div>
           </div>
-          <Button
+          <div>
+               <Button
             text={"Browse Properties"}
-            bg={"bg-primary text-white"}
             link={"/listings"}
           />
+          </div>
+       
+
         </div>
         <div className="w-1/2 h-full">
           <img src={IMAGES.Hero} alt="" className="w-full" />

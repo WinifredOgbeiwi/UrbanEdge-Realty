@@ -131,3 +131,37 @@ export const Listing = [
   }
   
 ] 
+
+export const FooterLinks = [
+  {
+    id:1,
+    title:"sell a home",
+    list:["Request an offer", "Pricing","reviews","stories"]
+  },
+  {
+    id:2,
+    title:"Buy, rent and sell",
+    list:["buy and sell properties", "rent home","builder trade-up"]
+  },
+  {
+    id:3,
+    title:"about",
+    list:["company", "how it works","contact","investors"]
+  },
+  {
+    id:4,
+    title:"buy a home",
+    list:[" buy", "finance"]
+  },
+  {
+    id:5,
+    title:"terms & privacy",
+    list:["trust & safety", "terms of services", "privacy polic"]
+  },
+  {
+    id:6,
+    title:"resources",
+    list:["blog", "guides","faq","help center"]
+  }
+
+]

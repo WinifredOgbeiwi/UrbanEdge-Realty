@@ -16,6 +16,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./routes/PrivateRoute";
 import { ROUTES } from "./utils/routes";
+import Footer from "./components/layouts/Footer";
 const App = () => {
   const location = useLocation();
   const showNavbar = [ROUTES.HOME, ROUTES.LISTINGS];
@@ -24,7 +25,7 @@ const App = () => {
 
   return (
     <>
-     {shouldShowNavbar &&  <Navbar /> }
+      {shouldShowNavbar && <Navbar />}
 
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
+      {shouldShowNavbar && <Footer/>}
     </>
   );
 };
