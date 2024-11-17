@@ -1,4 +1,6 @@
 import React from 'react'
+import IMAGES from '../../utils/assets';
+import Button from '../common/Button';
 
 const Hero = () => {
   return (

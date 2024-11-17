@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
 import IMAGES from "../../utils/assets";
-import ModalComp from "../../components/common/Modal";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -95,7 +94,6 @@ const Login = () => {
       <div className="hidden sm:flex bg-primary  ">
         <img src={IMAGES.Auth} alt="" />
       </div>
-     < ModalComp/>
     </section>
   );
 };
