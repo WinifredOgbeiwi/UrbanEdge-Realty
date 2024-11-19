@@ -9,16 +9,15 @@ import ListingCard from "../common/ListingCard";
 const HomeListing = () => {
   const homeList =Listing.slice(0)
   return (
-    <section className="mt-16 mx-16">
-      <div className="grid grid-cols-3 gap-6 ">
+    <section className="mt-16 mx-8 sm:mx-16">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
         {homeList.map((item) => (
-       <ListingCard item={item}/>
+          <ListingCard item={item} />
         ))}
       </div>
       <div className="flex items-center my-6  justify-center">
-             <Button link="/listings"  text="Browse Properties" ></Button> 
+        <Button link="/listings" text="Browse Properties"></Button>
       </div>
-
     </section>
   );
 }

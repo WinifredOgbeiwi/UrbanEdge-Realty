@@ -19,7 +19,7 @@ import { ROUTES } from "./utils/routes";
 import Footer from "./components/layouts/Footer";
 const App = () => {
   const location = useLocation();
-  const showNavbar = [ROUTES.HOME, ROUTES.LISTINGS];
+  const showNavbar = [ROUTES.HOME, ROUTES.LISTINGS, ROUTES.PROFILE];
 
   const shouldShowNavbar = showNavbar.includes(location.pathname);
 
