@@ -7,7 +7,7 @@ import Button from "../common/Button";
 import ListingCard from "../common/ListingCard";
 
 const HomeListing = () => {
-  const homeList =Listing.slice(0)
+  const homeList =Listing.slice(0,6)
   return (
     <section className="mt-16 mx-8 sm:mx-16">
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">

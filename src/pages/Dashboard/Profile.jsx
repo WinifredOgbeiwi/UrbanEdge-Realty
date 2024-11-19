@@ -24,10 +24,10 @@ const [userInfo, setUserInfo] = useState({
     }
   };
   return (
-    <section className="mx-12 my-5 flex items-center justify-center flex-col ">
+    <section className="mx-12 my-20 flex items-center justify-center flex-col  ">
       <div className="w-full md:w-[45%] border-2 bg-secondary2 border-secondary px-5 rounded-lg py-5 relative">
         <h2 className="text-center font-bold text-3xl">My Profile</h2>
-        <div className="m-auto w-20 h-20 mt-4 rounded-full bg-secondary border-2 border-primary flex justify-center items-center">
+        <div className="m-auto w-24 h-24 mt-4 rounded-full bg-secondary border-2 border-primary flex justify-center items-center">
           <p className="text-3xl font-extrabold"> {userInfo.name[0]}</p>
         </div>
         <Input
@@ -62,7 +62,7 @@ const [userInfo, setUserInfo] = useState({
         onclick={handlesLogOut}
         text="Log Out"
         bg="text-white bg-primary"
-        w="w-full mt-4"
+        w=" w-full mt-4"
       />
     </section>
   );

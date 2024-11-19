@@ -11,12 +11,12 @@ import NotFound from "./pages/NotFound";
 import Buy from "./pages/Dashboard/Buy";
 import Sell from "./pages/Dashboard/Sell";
 import PropertiesDetails from "./pages/Dashboard/PropertiesDetails";
-import Listings from "./pages/Landing_page/Listings";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./routes/PrivateRoute";
 import { ROUTES } from "./utils/routes";
 import Footer from "./components/layouts/Footer";
+import Listings from "./pages/Dashboard/Listings";
 const App = () => {
   const location = useLocation();
   const showNavbar = [ROUTES.HOME, ROUTES.LISTINGS, ROUTES.PROFILE];
@@ -39,9 +39,8 @@ const App = () => {
         <Route element={<PrivateRoute />}>
           <Route path={ROUTES.PROFILE} element={<Profile />} />
           <Route path={ROUTES.PROPERTY} element={<PropertiesDetails />} />
-          <Route path={ROUTES.LISTINGS} element={<Listings />} />
         </Route>
-
+        <Route path={ROUTES.LISTINGS} element={<Listings />} />
         <Route path={ROUTES.BUY} element={<Buy />} />
         <Route path={ROUTES.SELL} element={<Sell />} />
         <Route path="*" element={<NotFound />} />
