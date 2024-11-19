@@ -24,6 +24,7 @@ const Input = ({
         onChange={onchange}
         value={value}
         required
+    
       />
 
       {id === "password" && (

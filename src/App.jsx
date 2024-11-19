@@ -29,7 +29,6 @@ const App = () => {
 
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.LISTINGS} element={<Listings />} />
         <Route path={ROUTES.LOGIN} element={<Login />} />
         <Route path={ROUTES.REGISTER} element={<Register />} />
         <Route path={ROUTES.RESET_PASSWORD} element={<ForgotPassword />} />
@@ -39,15 +38,16 @@ const App = () => {
         />
         <Route element={<PrivateRoute />}>
           <Route path={ROUTES.PROFILE} element={<Profile />} />
+          <Route path={ROUTES.PROPERTY} element={<PropertiesDetails />} />
+          <Route path={ROUTES.LISTINGS} element={<Listings />} />
         </Route>
 
         <Route path={ROUTES.BUY} element={<Buy />} />
         <Route path={ROUTES.SELL} element={<Sell />} />
-        <Route path={ROUTES.PROPERTY} element={<PropertiesDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ToastContainer />
-      {shouldShowNavbar && <Footer/>}
+      {shouldShowNavbar && <Footer />}
     </>
   );
 };
