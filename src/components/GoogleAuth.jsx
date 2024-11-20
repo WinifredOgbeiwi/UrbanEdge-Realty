@@ -4,6 +4,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { db } from "../../firebase";
 import { getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../utils/routes";
 
 const GoogleAuth = ({page}) => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const GoogleAuth = ({page}) => {
         });
       }
       toast.success("Registration Successful ! ");
-      navigate("/");
+      navigate(ROUTES.HOME)
     } catch (error) {
       toast.error("Error! Could not authorize with google");
     }
@@ -33,7 +34,7 @@ const GoogleAuth = ({page}) => {
     <div onClick={handlesGoogleReg} className="px-4 mb-5 ">
       <Button
         text={`${page} with Google`}
-        bg="bg-red-700 border-none text-white w-full"
+        w="bg-red-700 border-none text-white w-full"
       />
     </div>
   );

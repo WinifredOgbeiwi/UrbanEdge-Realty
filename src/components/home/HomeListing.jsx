@@ -12,7 +12,7 @@ const HomeListing = () => {
     <section className="mt-16 mx-8 sm:mx-16">
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 ">
         {homeList.map((item) => (
-          <ListingCard item={item} />
+          <ListingCard item={item}  key={item.id}/>
         ))}
       </div>
       <div className="flex items-center my-6  justify-center">

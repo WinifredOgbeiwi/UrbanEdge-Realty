@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { NavLists } from "../../utils/data-arrays";
 import useAuthStatus from "../../hooks/useAuthStatus";
 import { AiOutlineMenuFold } from "react-icons/ai";
+import { ROUTES } from "../../utils/routes";
 
 const Navbar = () => {
 const {loggedIn} = useAuthStatus();
@@ -29,11 +30,11 @@ const [isShown, setIsShown] = useState(false);
       </ul>
       <div className="hidden md:block">
         {loggedIn ? (
-          <Button text={"Profile"} link={"/profile"} id="full" />
+          <Button text={"Profile"} link={ROUTES.PROFILE} id="full" />
         ) : (
           <div className="space-x-10 flex">
-            <Button text={"Login"} id="light" link={"/login"} />
-            <Button text={"Register"} link={"/register"} />
+            <Button text={"Login"} id="light" link={ROUTES.LOGIN} />
+            <Button text={"Register"} link={ROUTES.REGISTER} />
           </div>
         )}
       </div>

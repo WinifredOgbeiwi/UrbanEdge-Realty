@@ -1,8 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.flexing{
-    @apply flex justify-between items-center
-}
-

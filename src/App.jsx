@@ -38,9 +38,10 @@ const App = () => {
         />
         <Route element={<PrivateRoute />}>
           <Route path={ROUTES.PROFILE} element={<Profile />} />
+          <Route path={ROUTES.LISTINGS} element={<Listings />} />
           <Route path={ROUTES.PROPERTY} element={<PropertiesDetails />} />
         </Route>
-        <Route path={ROUTES.LISTINGS} element={<Listings />} />
+
         <Route path={ROUTES.BUY} element={<Buy />} />
         <Route path={ROUTES.SELL} element={<Sell />} />
         <Route path="*" element={<NotFound />} />

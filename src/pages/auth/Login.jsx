@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
 import IMAGES from "../../utils/assets";
+import { ROUTES } from "../../utils/routes";
 
 const Login = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -44,7 +45,13 @@ const Login = () => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
       <div className="w-full h-full bg-[#E6D8FF] px-10 ">
-        <h2 className="text-4xl mt-10 text-center font-bold">Welcome Back</h2>
+        <h1 className="text-5xl mt-10 text-center font-bold">
+          <Link to={ROUTES.HOME}>UrbanEdge</Link>
+        </h1>
+
+        <h2 className="text-4xl mt-5 text-center font-semibold">
+          Welcome Back
+        </h2>
         <form onSubmit={handlesSubmit} className="px-4">
           <Input
             id="email"
@@ -68,23 +75,20 @@ const Login = () => {
             <p>
               Don't have an account ?
               <Link
-                to={"/register"}
+                to={ROUTES.REGISTER}
                 className="text-primary hover:cursor-pointer ml-1"
               >
                 Register
               </Link>
             </p>
             <Link
-              to={"/reset-password"}
+              to={ROUTES.RESET_PASSWORD}
               className="text-primary hover:cursor-pointer "
             >
               Forgot password?
             </Link>
           </div>
-          <Button
-            onclick={handlesSubmit}
-            text="Login"
-          />
+          <Button onclick={handlesSubmit} text="Login" w="w-full" />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>

@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import GoogleAuth from "../../components/GoogleAuth";
 import IMAGES from "../../utils/assets";
+import { ROUTES } from "../../utils/routes";
 
 const Register = () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
@@ -55,7 +56,7 @@ const Register = () => {
      delete formData.password;
      formData.timestamp = serverTimestamp();
      await setDoc(doc(db, "users", user.uid), formData);
-     navigate("/confirm-registration");
+     navigate(ROUTES.CONFIRM_REGISTRATION);
    } catch (error) {
      console.log(error);
      toast.error("Error! Try Again");
@@ -66,7 +67,10 @@ const Register = () => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 h-screen">
       <div className="w-full h-full bg-[#E6D8FF] px-10">
-        <h2 className="text-4xl mt-10 text-center font-bold mb-2">Welcome </h2>
+        <h1 className="text-5xl mt-10 text-center font-bold">
+          <Link to={ROUTES.HOME}>UrbanEdge</Link>
+        </h1>
+        <h2 className="text-4xl mt-5 text-center font-semibold">Welcome</h2>
         <form onSubmit={handlesSubmit} className="px-4">
           <Input
             id="fullname"
@@ -99,17 +103,14 @@ const Register = () => {
             <p>
               Already have an account ?
               <Link
-                to={"/login"}
+                to={ROUTES.LOGIN}
                 className="text-primary hover:cursor-pointer ml-1"
               >
                 Login
               </Link>
             </p>
           </div>
-          <Button
-            onclick={handlesSubmit}
-            text="Register"
-          />
+          <Button onclick={handlesSubmit} text="Register" w="w-full" />
         </form>
         <div className=" my-4 flex items-center text-center before:border-t-2 before:flex-1 before:border-secondary after:border-t-2 after:flex-1  after:border-secondary ">
           <p className="mx-4">OR</p>

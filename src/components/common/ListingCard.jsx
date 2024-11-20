@@ -21,7 +21,7 @@ const ListingCard = ({item}) => {
           <span className="text-primary font-extrabold text-xl">
             {item.price}
           </span>
-          <sapn className=" opacity-40 text-sm">/month</sapn>
+          <span className=" opacity-40 text-sm">/month</span>
         </h5>
         <h5 className="font-extrabold text-xl my-2">{item.name}</h5>
         <p className="opacity-40 text-sm">{item.address}</p>
